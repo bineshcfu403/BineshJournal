@@ -99,13 +99,6 @@
     margin-bottom:4px;
   }
 
-  /* 🎙️ استایل گوینده */
-  .speaker{
-    font-size:14px;
-    color:var(--blue);
-    margin-bottom:8px;
-  }
-
   .file-type{
     display:inline-block;
     font-size:12px;
@@ -185,7 +178,6 @@
     min-width:300px;
   }
 
-  /* 🔸 اضافه‌شده: هاله زرد دور پادکست‌ها، ترجمه‌ها و لوگوها */
   .files .file-card {
     border: 2px solid var(--yellow);
     box-shadow: 0 0 8px rgba(255, 213, 79, 0.6);
@@ -194,6 +186,18 @@
   .logos img {
     border: 2px solid var(--yellow);
     box-shadow: 0 0 8px rgba(255, 213, 79, 0.6);
+  }
+
+  /* بخش معرفی گویندگان */
+  .speakers-list {
+    margin-top: 30px;
+    background: var(--blue-light);
+    border: 2px dashed var(--yellow-dark);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--blue-dark);
   }
 </style>
 </head>
@@ -205,7 +209,7 @@
     <img alt="لوگوی انجمن" src="images/logo1.png"/>
   </div>
   <h1>نشریه علمی ـ تخصصی بینش</h1>
-  <div class="subtitle">انجمن علمی مشاوره و امور تربیتی پردیس حضرت فاطمه الزهرا (س) استان یزد</div>
+  <div class="subtitle">انجمن علمی مشاوره و امور تربیتی پردیس حضرت فاطمه الزهراء (س) استان یزد</div>
 </header>
 <main class="container">
   <!-- شماره چهارم -->
@@ -216,45 +220,44 @@
         <!-- ستون راست: پادکست‌ها -->
         <div class="column">
           <h3>🎙️ پادکست‌</h3>
+
+          <!-- ✅ اضافه شده: بخش گویندگان -->
+          <div class="speakers-list">
+            گویندگان: سارا اسدی کرم، پرنیا بهرامی مقدم، مائده شیخیان و ریحانه علیزاده
+          </div>
+
+
           <section class="files">
             <div class="file-card">
               <div class="file-title">سکوت آینه ها</div>
-              <div class="speaker">گوینده: پرنیا بهرامی مقدم</div>
               <audio controls src="mp3/سکوت آینه‌ها.mp3"></audio>
             </div>
             <div class="file-card">
               <div class="file-title">وقتی جمع برایتان کابوس میشود</div>
-              <div class="speaker"> گویندگان: سارا اسدی کرم، پرنیا بهرامی مقدم</div>
               <audio controls src="mp3/وقتی جمع برایتان کابوس میشود.mp3"></audio>
             </div>
             <div class="file-card">
               <div class="file-title" style="direction:ltr; text-align:left;">Social Anxiety= Understanding, Impacts, and Therapeutic Approaches</div>
-              <div class="speaker">گوینده: مائده شیخیان</div>
               <audio controls src="mp3/Social Anxiety= Understanding, Impacts, and Therapeutic Approaches.mp3"></audio>
             </div>
             <div class="file-card">
               <div class="file-title">نبض گفتگو</div>
-              <div class="speaker"> گویندگان: پرنیا بهرامی مقدم، ریحانه علیزاده</div>
               <audio controls src="mp3/نبض گفتگو.mp3"></audio>
             </div>
             <div class="file-card">
               <div class="file-title">توپ هایی کوچک با اهدافی بزرگ</div>
-              <div class="speaker"> گویندگان: مائده شیخیان، ریحانه علیزاده</div>
               <audio controls src="mp3/توپ هایی کوچک با اهدافی بزرگ.mp3"></audio>
             </div>
             <div class="file-card">
               <div class="file-title">رنگ های خاموش، خطوط هراسان</div>
-              <div class="speaker">گویندگان: پرنیا بهرامی مقدم، مائده شیخیان</div>
               <audio controls src="mp3/رنگ های خاموش، خطوط هراسان.mp3"></audio>
             </div>
             <div class="file-card">
               <div class="file-title">مرز های ناپیدا</div>
-              <div class="speaker">گویندگان: پرنیا بهرامی مقدم، ریحانه علیزاده</div>
               <audio controls src="mp3/مرز های ناپیدا.mp3"></audio>
             </div>
             <div class="file-card">
               <div class="file-title">از پنجره قلم تا پرده سینما</div>
-              <div class="speaker">گوینده: پرنیا بهرامی مقدم</div>
               <audio controls src="mp3/از پنجره قلم تا پرده سینما.mp3"></audio>
             </div>
           </section>
