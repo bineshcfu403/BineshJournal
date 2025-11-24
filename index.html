@@ -24,13 +24,21 @@
     line-height:1.8;
   }
   header{
-    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
-    border-bottom: 5px solid var(--yellow);
-    position:relative;
-    padding: 36px 16px 32px 16px;
-    text-align:center;
-    color:white;
-  }
+      position: relative;
+      color: #fff;
+      text-align: center;
+      border-bottom: 4px solid var(--accent-yellow);
+      /* استفاده از تصویر هدر آپلود شده */
+      background:
+        linear-gradient(180deg, rgba(13,35,89,0.55) 0%, rgba(32,75,160,0.45) 100%),
+        url('images/yazd-header.jpg') no-repeat center center;
+      background-size: cover;
+      min-height: 380px; /* فقط ارتفاع را بزرگ‌تر کردیم */
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding: 36px 20px;
+    }
   header h1{
     margin:40px 0 0 0; 
     font-size: clamp(24px, 3.8vw, 34px);
@@ -208,8 +216,8 @@
       <div class="two-columns">
         <div class="column">
           <h3>🎙️ پادکست‌</h3>
-          <div class="speakers-list">
-            گویندگان: سارا اسدی کرم، پرنیا بهرامی مقدم، مائده شیخیان و ریحانه علیزاده
+          <div class="speakers-list"> گویندگان: <br>
+سارا اسدی کرم، پرنیا بهرامی مقدم، مائده شیخیان و ریحانه علیزاده
           </div>
           <section class="files">
             <div class="file-card" id="podcast-1"><div class="file-title">سکوت آینه ها</div><audio controls src="mp3/1.mp3"></audio></div>
