@@ -16,6 +16,7 @@
     --card-bg:#ffffff;
   }
   *{box-sizing:border-box}
+  html{ scroll-behavior:smooth; }
   body{
     margin:0;
     font-family: "Vazirmatn", Tahoma, Arial, sans-serif;
@@ -24,19 +25,18 @@
     line-height:1.8;
   }
   header{
-      position: relative;
-      color: #fff;
-      text-align: center;
-      border-bottom: 6px solid var(--yellow); /* زرد طلایی */
-      /* حذف کامل عکس پس‌زمینه */
-      background: linear-gradient(135deg, #0d2359 0%, #1e40a0 50%, #2a5fbf 100%);
-      min-height: 380px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      padding: 36px 20px;
-      box-shadow: 0 4px 20px rgba(13,35,89,0.4);
-    }
+    position: relative;
+    color: #fff;
+    text-align: center;
+    border-bottom: 6px solid var(--yellow);
+    background: linear-gradient(135deg, #0d2359 0%, #1e40a0 50%, #2a5fbf 100%);
+    min-height: 380px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding: 36px 20px;
+    box-shadow: 0 4px 20px rgba(13,35,89,0.4);
+  }
   header h1{
     margin:40px 0 0 0; 
     font-size: clamp(24px, 3.8vw, 34px);
@@ -93,7 +93,6 @@
     background:var(--card-bg);
     border-radius:18px;
     padding:18px;
-    box-shadow: 0 8px 20px rgba(25, 78, 171, 0.12);
     transition:transform .2s ease, box-shadow .2s ease;
     border: 2px solid var(--yellow);
     box-shadow: 0 0 8px rgba(255, 213, 79, 0.6);
@@ -108,26 +107,6 @@
     color:var(--blue-dark);
     margin-bottom:4px;
   }
-  .file-type{
-    display:inline-block;
-    font-size:12px;
-    padding:4px 12px;
-    border-radius:999px;
-    background:var(--yellow);
-    color:#2a2000;
-    margin-bottom:12px;
-  }
-  .file-link{
-    display:inline-block;
-    margin-top:10px;
-    padding:8px 14px;
-    border-radius:12px;
-    text-decoration:none;
-    background:var(--blue);
-    color:#fff;
-    font-weight:600;
-  }
-  .file-link:hover{ background:var(--blue-dark); }
   audio{ width:100%; margin-top:10px; }
   footer{
     background: var(--blue-dark);
@@ -138,13 +117,8 @@
     align-items:center;
     flex-wrap:wrap;
   }
-  footer .right{
-    font-size:13px;
-    opacity:.9;
-  }
-  footer .left a{
-    text-decoration:none;
-  }
+  footer .right{ font-size:13px; opacity:.9; }
+  footer .left a{ text-decoration:none; }
   .accordion{
     border:1px solid #cfe0ff;
     border-radius:12px;
@@ -182,10 +156,7 @@
     gap:30px;
     margin-top:20px;
   }
-  .two-columns .column{
-    flex:1;
-    min-width:300px;
-  }
+  .two-columns .column{ flex:1; min-width:300px; }
   .speakers-list {
     margin-top: 30px;
     background: var(--blue-light);
@@ -217,18 +188,45 @@
       <div class="two-columns">
         <div class="column">
           <h3>🎙️ پادکست‌</h3>
-          <div class="speakers-list"> گویندگان: <br>
-سارا اسدی کرم، پرنیا بهرامی مقدم، مائده شیخیان و ریحانه علیزاده
+          <div class="speakers-list">
+            گویندگان: <br>
+            سارا اسدی کرم، پرنیا بهرامی مقدم، مائده شیخیان و ریحانه علیزاده
           </div>
           <section class="files">
-            <div class="file-card" id="podcast-1"><div class="file-title">سکوت آینه ها</div><audio controls src="mp3/1.mp3"></audio></div>
-            <div class="file-card" id="podcast-2"><div class="file-title">وقتی جمع برایتان کابوس میشود</div><audio controls src="mp3/2.mp3"></audio></div>
-            <div class="file-card" id="podcast-3"><div class="file-title" style="direction:ltr; text-align:left;">Social Anxiety= Understanding, Impacts, and Therapeutic Approaches</div><audio controls src="mp3/3.mp3"></audio></div>
-            <div class="file-card" id="podcast-4"><div class="file-title">نبض گفتگو</div><audio controls src="mp3/4.mp3"></audio></div>
-            <div class="file-card" id="podcast-5"><div class="file-title">توپ هایی کوچک با اهدافی بزرگ</div><audio controls src="mp32/5.mp3"></audio></div>
-            <div class="file-card" id="podcast-6"><div class="file-title">رنگ های خاموش، خطوط هراسان</div><audio controls src="mp32/6.mp3"></audio></div>
-            <div class="file-card" id="podcast-7"><div class="file-title">مرز های ناپیدا</div><audio controls src="mp32/7.mp3"></audio></div>
-            <div class="file-card" id="podcast-8"><div class="file-title">از پنجره قلم تا پرده سینما</div><audio controls src="mp32/8.mp3"></audio></div>
+            <div class="file-card" id="podcast-1">
+              <div class="file-title">سکوت آینه ها</div>
+              <audio controls src="mp3/1.mp3"></audio>
+            </div>
+            <div class="file-card" id="podcast-2">
+              <div class="file-title">وقتی جمع برایتان کابوس میشود</div>
+              <audio controls src="mp3/2.mp3"></audio>
+            </div>
+            <div class="file-card" id="podcast-3">
+              <div class="file-title" style="direction:ltr; text-align:left;">
+                Social Anxiety= Understanding, Impacts, and Therapeutic Approaches
+              </div>
+              <audio controls src="mp3/3.mp3"></audio>
+            </div>
+            <div class="file-card" id="podcast-4">
+              <div class="file-title">نبض گفتگو</div>
+              <audio controls src="mp3/4.mp3"></audio>
+            </div>
+            <div class="file-card" id="podcast-5">
+              <div class="file-title">توپ هایی کوچک با اهدافی بزرگ</div>
+              <audio controls src="mp32/5.mp3"></audio>
+            </div>
+            <div class="file-card" id="podcast-6">
+              <div class="file-title">رنگ های خاموش، خطوط هراسان</div>
+              <audio controls src="mp32/6.mp3"></audio>
+            </div>
+            <div class="file-card" id="podcast-7">
+              <div class="file-title">مرز های ناپیدا</div>
+              <audio controls src="mp32/7.mp3"></audio>
+            </div>
+            <div class="file-card" id="podcast-8">
+              <div class="file-title">از پنجره قلم تا پرده سینما</div>
+              <audio controls src="mp32/8.mp3"></audio>
+            </div>
           </section>
         </div>
         <div class="column">
@@ -249,9 +247,13 @@
 <footer>
   <div class="right">تمامی حقوق سایت محفوظ می‌باشد</div>
   <div class="left">
-    راه‌های ارتباطی : 
-    <a href="https://eitaa.com/Binesh_CfuYazd" target="_blank"><img src="images/Eitaa-vector-logo.png" alt="ایتا" style="height:25px;vertical-align:middle;margin:0 6px;"/></a> |
-    <a href="mailto:BineshCFU403@gmail.com?body=سلام%20و%20وقت%20بخیر،"><img src="images/gmail-png.png" alt="ایمیل" style="height:25px;vertical-align:middle;margin:0 6px;"/></a>
+    راه‌های ارتباطی :
+    <a href="https://eitaa.com/Binesh_CfuYazd" target="_blank">
+      <img src="images/Eitaa-vector-logo.png" alt="ایتا" style="height:25px;vertical-align:middle;margin:0 6px;"/>
+    </a> |
+    <a href="mailto:BineshCFU403@gmail.com?body=سلام%20و%20وقت%20بخیر،">
+      <img src="images/gmail-png.png" alt="ایمیل" style="height:25px;vertical-align:middle;margin:0 6px;"/>
+    </a>
   </div>
 </footer>
 
@@ -264,7 +266,7 @@
     });
   });
 
-  // اسکرول و پخش خودکار با #id یا ?id=
+  // اسکرول و پخش با #id یا ?id= (با تأخیر تا آکاردئون کامل باز شود)
   (function(){
     function openAccordionFor(el){
       const accContent = el.closest('.accordion-content');
@@ -275,15 +277,19 @@
     function playAudioInside(el){
       const audio = el.querySelector('audio');
       if(audio){
-        audio.play().catch(()=>{});
+        audio.play().catch(()=>{ /* ممکن است مرورگر اجازه ندهد */ });
       }
     }
     function goToAndPlayById(id){
       const target = document.getElementById(id);
       if(target){
         openAccordionFor(target);
-        target.scrollIntoView({behavior:'smooth', block:'center'});
-        setTimeout(()=> playAudioInside(target), 300);
+        // کمی تأخیر برای محاسبه ارتفاع و باز شدن آکاردئون
+        setTimeout(()=>{
+          target.scrollIntoView({behavior:'smooth', block:'center'});
+          // اگر پادکست باشد، تلاش برای پخش
+          playAudioInside(target);
+        }, 500);
         return true;
       }
       return false;
