@@ -171,6 +171,59 @@
     font-weight: 600;
     color: var(--blue-dark);
   }
+  /* استایل اضافی برای آپلود فایل ها در بخش جدید */
+  .upload-label {
+    display: block;
+    background-color: #f0f4fe;
+    padding: 8px 12px;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue-dark);
+    margin: 12px 0 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 1px dashed var(--yellow-dark);
+  }
+  .upload-label:hover {
+    background-color: #e6edff;
+  }
+  input[type="file"] {
+    display: none;
+  }
+  .file-name-display {
+    font-size: 12px;
+    background: #f1f5f9;
+    padding: 6px 8px;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 8px;
+    word-break: break-word;
+  }
+  .clear-upload {
+    background: #ffe4e4;
+    border: none;
+    border-radius: 40px;
+    padding: 4px 10px;
+    font-size: 11px;
+    margin-top: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    color: #b91c1c;
+  }
+  .pdf-preview-frame {
+    margin-top: 14px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .pdf-preview-frame iframe {
+    width: 100%;
+    height: 260px;
+    border: 1px solid var(--yellow);
+    border-radius: 16px;
+  }
 </style>
 </head>
 <body>
@@ -185,52 +238,29 @@
 </header>
 
 <main class="container">
+  <!-- شماره اول - بدون هیچ تغییری -->
   <div class="accordion">
     <div class="accordion-header">شماره اول - اضطراب اجتماعی <span>▼</span></div>
     <div class="accordion-content">
       <div class="two-columns">
 
         <div class="column">
-          <h3>🎙️ پادکست‌</h3>
+          <h3>🎙️ پادکست‌ها</h3>
           <div class="speakers-list">
-            گویندگان: <br>
-            سارا اسدی کرم، پرنیا بهرامی مقدم، مائده شیخیان و ریحانه علیزاده
+         گویندگان: سارا اسدی کرم، پرنیا بهرامی مقدم، مائده شیخیان، ریحانه علیزاده، ستاره غلام‌پور و ریحانه هاشم‌پور هامانه
           </div>
-          <section class="files">
-            <div class="file-card" id="podcast-1">
-              <div class="file-title">سکوت آینه ها</div>
-              <audio controls src="mp3/1.mp3"></audio>
-            </div>
-            <div class="file-card" id="podcast-2">
-              <div class="file-title">وقتی جمع برایتان کابوس میشود</div>
-              <audio controls src="mp3/2.mp3"></audio>
-            </div>
-            <div class="file-card" id="podcast-3">
-              <div class="file-title" style="direction:ltr; text-align:left;">
-                The Trap of Social Judgment: An Examination of Social Anxiety
-              </div>
-              <audio controls src="mp3/3.mp3"></audio>
-            </div>
-            <div class="file-card" id="podcast-4">
-              <div class="file-title">نبض گفتگو</div>
-              <audio controls src="mp3/4.mp3"></audio>
-            </div>
-            <div class="file-card" id="podcast-5">
-              <div class="file-title">توپ هایی کوچک با اهدافی بزرگ</div>
-              <audio controls src="mp32/5.mp3"></audio>
-            </div>
-            <div class="file-card" id="podcast-6">
-              <div class="file-title">رنگ های خاموش، خطوط هراسان</div>
-              <audio controls src="mp32/6.mp3"></audio>
-            </div>
-            <div class="file-card" id="podcast-7">
-              <div class="file-title">مرز های ناپیدا</div>
-              <audio controls src="mp32/7.mp3"></audio>
-            </div>
-            <div class="file-card" id="podcast-8">
-              <div class="file-title">از پنجره قلم تا پرده سینما</div>
-              <audio controls src="mp32/8.mp3"></audio>
-            </div>
+          <div class="files">
+              <div class="file-card" id="podcast-9"><div class="file-title">شنبه‌های سنگین یاد تو</div><audio controls src="mp3/9.mp3"></audio></div>
+            <div class="file-card" id="podcast-1"><div class="file-title">سکوت آینه‌ها</div><audio controls src="mp3/1.mp3"></audio></div>
+            <div class="file-card" id="podcast-2"><div class="file-title">وقتی جمع برایتان کابوس می‌شود</div><audio controls src="mp3/2.mp3"></audio></div>
+            <div class="file-card" id="podcast-3"><div class="file-title" style="direction:ltr; text-align:left;">The Trap of Social Judgment: An Examination of Social Anxiety</div><audio controls src="mp3/3.mp3"></audio></div>
+            <div class="file-card" id="podcast-4"><div class="file-title">نبض گفتگو</div><audio controls src="mp3/4.mp3"></audio></div>
+            <div class="file-card" id="podcast-5"><div class="file-title">توپ‌هایی کوچک با اهدافی بزرگ</div><audio controls src="mp32/5.mp3"></audio></div>
+            <div class="file-card" id="podcast-6"><div class="file-title">رنگ‌های خاموش، خطوط هراسان</div><audio controls src="mp32/6.mp3"></audio></div>
+            <div class="file-card" id="podcast-7"><div class="file-title">مرز‌های ناپیدا</div><audio controls src="mp32/7.mp3"></audio></div>
+            <div class="file-card" id="podcast-10"><div class="file-title">نسلی که می‌نویسد اما کمتر می‌گوید</div><audio controls src="mp3/10.mp3"></audio></div>
+            <div class="file-card" id="podcast-8"><div class="file-title">از پنجره قلم تا پرده سینما</div><audio controls src="mp32/8.mp3"></audio></div>
+          </div>
           </section>
         </div>
 
@@ -259,6 +289,41 @@
       </div>
     </div>
   </div>
+
+  <!-- ========== شماره دوم - کمال‌گرایی (جدید، با قابلیت آپلود ۹ فایل صوتی و یک PDF) ========== -->
+  <div class="accordion">
+    <div class="accordion-header">شماره دوم - کمال‌گرایی <span>▼</span></div>
+    <div class="accordion-content">
+      <div class="two-columns">
+        
+        <!-- ستون پادکست: ۹ جایگاه آپلود فایل صوتی -->
+        <div class="column">
+          <h3>🎙️ پادکست (آپلود ۹ فایل صوتی)</h3>
+          <div class="speakers-list" style="background:#fff2df;">
+            📌 هر قسمت را می‌توانید با کلیک روی دکمه آپلود، فایل صوتی خود را بارگذاری کنید (mp3, m4a, wav)
+          </div>
+          <div class="files" id="podcastUploadContainer">
+            <!-- ۹ کارت با کمک JS ساخته می‌شوند تا کاملاً شبیه نمونه اولیه باشند -->
+          </div>
+        </div>
+
+        <!-- ستون فایل نشریه: فقط یک جایگاه برای آپلود PDF -->
+        <div class="column">
+          <h3>📘 فایل نشریه (PDF)</h3>
+          <div class="files">
+            <div class="file-card" id="magazine-second-upload">
+              <div class="file-title">شماره دوم - بارگذاری PDF نشریه</div>
+              <label class="upload-label" for="pdfSecondInput">📂 انتخاب فایل PDF</label>
+              <input type="file" id="pdfSecondInput" accept="application/pdf" />
+              <div id="pdfSecondFileName" class="file-name-display">هیچ فایلی انتخاب نشده است</div>
+              <div id="pdfSecondPreview" class="pdf-preview-frame"></div>
+              <button id="clearPdfSecond" class="clear-upload" style="display:none;">🗑 حذف فایل</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 
 <footer>
@@ -275,13 +340,15 @@
 </footer>
 
 <script>
+  // ========== حفظ عملکرد آکاردئون اصلی (بدون تغییر) ==========
   document.querySelectorAll(".accordion-header").forEach(header=>{
     header.addEventListener("click", ()=>{
       const content = header.nextElementSibling;
-      content.classList.toggle("open");
+      if(content) content.classList.toggle("open");
     });
   });
 
+  // ========== قابلیت پخش خودکار از هش (موجود) ==========
   (function(){
     function openAccordionFor(el){
       const accContent = el.closest('.accordion-content');
@@ -312,6 +379,178 @@
       if(params.has('id') && goToAndPlayById(params.get('id'))) return;
     });
   })();
+
+  // ========== ساخت ۹ کارت آپلود صوتی برای شماره دوم (با ظاهر کاملاً مشابه نمونه اصلی) ==========
+  const container = document.getElementById("podcastUploadContainer");
+  if(container) {
+    for(let i = 1; i <= 9; i++) {
+      const card = document.createElement("div");
+      card.className = "file-card";
+      card.setAttribute("data-podcast-index", i);
+      
+      // عنوان مانند نمونه اصلی
+      const titleDiv = document.createElement("div");
+      titleDiv.className = "file-title";
+      titleDiv.innerText = `🎙️ قسمت ${i} - کلیپ صوتی`;
+      
+      // input مخفی و دکمه آپلود
+      const fileInput = document.createElement("input");
+      fileInput.type = "file";
+      fileInput.accept = "audio/*";
+      fileInput.id = `podcastUpload_${i}`;
+      fileInput.style.display = "none";
+      
+      const uploadLabel = document.createElement("label");
+      uploadLabel.htmlFor = `podcastUpload_${i}`;
+      uploadLabel.className = "upload-label";
+      uploadLabel.innerText = "📁 آپلود فایل صوتی";
+      
+      // پلیر صوتی که بعد از آپلود نمایش داده می‌شود (در ابتدا مخفی یا بدون منبع)
+      const audioPlayer = document.createElement("audio");
+      audioPlayer.controls = true;
+      audioPlayer.style.marginTop = "8px";
+      audioPlayer.style.display = "none";
+      
+      // نمایش نام فایل
+      const fileNameSpan = document.createElement("div");
+      fileNameSpan.className = "file-name-display";
+      fileNameSpan.innerText = "هیچ فایلی انتخاب نشده";
+      
+      // دکمه حذف
+      const clearBtn = document.createElement("button");
+      clearBtn.innerText = "❌ حذف فایل";
+      clearBtn.className = "clear-upload";
+      clearBtn.style.display = "none";
+      
+      let currentAudioUrl = null;
+      
+      // رویداد تغییر فایل
+      fileInput.addEventListener("change", function(event) {
+        const file = event.target.files[0];
+        if(file && file.type.startsWith("audio/")) {
+          if(currentAudioUrl) URL.revokeObjectURL(currentAudioUrl);
+          const objUrl = URL.createObjectURL(file);
+          currentAudioUrl = objUrl;
+          audioPlayer.src = objUrl;
+          audioPlayer.style.display = "block";
+          fileNameSpan.innerText = `🎵 ${file.name.substring(0, 40)}${file.name.length>40 ? '…' : ''} (${(file.size/1024).toFixed(1)} KB)`;
+          fileNameSpan.style.background = "#d9f0ec";
+          clearBtn.style.display = "block";
+        } else if(file) {
+          alert("لطفاً یک فایل صوتی معتبر انتخاب کنید (mp3, wav, m4a)");
+          fileInput.value = "";
+          fileNameSpan.innerText = "❌ فرمت نامعتبر";
+          fileNameSpan.style.background = "#ffe0e0";
+          if(currentAudioUrl) { URL.revokeObjectURL(currentAudioUrl); currentAudioUrl = null; }
+          audioPlayer.src = "";
+          audioPlayer.style.display = "none";
+          clearBtn.style.display = "none";
+        } else {
+          // حذف دستی
+          if(currentAudioUrl) URL.revokeObjectURL(currentAudioUrl);
+          currentAudioUrl = null;
+          audioPlayer.src = "";
+          audioPlayer.style.display = "none";
+          fileNameSpan.innerText = "هیچ فایلی انتخاب نشده";
+          fileNameSpan.style.background = "#f1f5f9";
+          clearBtn.style.display = "none";
+        }
+      });
+      
+      clearBtn.addEventListener("click", function() {
+        if(currentAudioUrl) URL.revokeObjectURL(currentAudioUrl);
+        currentAudioUrl = null;
+        fileInput.value = "";
+        audioPlayer.src = "";
+        audioPlayer.style.display = "none";
+        fileNameSpan.innerText = "هیچ فایلی انتخاب نشده";
+        fileNameSpan.style.background = "#f1f5f9";
+        clearBtn.style.display = "none";
+      });
+      
+      card.appendChild(titleDiv);
+      card.appendChild(uploadLabel);
+      card.appendChild(fileInput);
+      card.appendChild(audioPlayer);
+      card.appendChild(fileNameSpan);
+      card.appendChild(clearBtn);
+      container.appendChild(card);
+    }
+  }
+  
+  // ========== بخش آپلود PDF (فقط یک فایل برای شماره دوم) ==========
+  const pdfInput = document.getElementById("pdfSecondInput");
+  const pdfFileNameSpan = document.getElementById("pdfSecondFileName");
+  const pdfPreviewDiv = document.getElementById("pdfSecondPreview");
+  const clearPdfBtn = document.getElementById("clearPdfSecond");
+  let currentPdfUrl = null;
+  
+  if(pdfInput && pdfFileNameSpan && pdfPreviewDiv) {
+    function updatePdfPreview(file) {
+      // پاک کردن preview قبلی
+      while(pdfPreviewDiv.firstChild) pdfPreviewDiv.removeChild(pdfPreviewDiv.firstChild);
+      if(!file) {
+        pdfFileNameSpan.innerText = "هیچ فایلی انتخاب نشده است";
+        pdfFileNameSpan.style.background = "#f1f5f9";
+        if(clearPdfBtn) clearPdfBtn.style.display = "none";
+        if(currentPdfUrl) { URL.revokeObjectURL(currentPdfUrl); currentPdfUrl = null; }
+        return;
+      }
+      if(currentPdfUrl) URL.revokeObjectURL(currentPdfUrl);
+      const blobUrl = URL.createObjectURL(file);
+      currentPdfUrl = blobUrl;
+      pdfFileNameSpan.innerText = `📄 ${file.name} (${(file.size/1024).toFixed(1)} KB)`;
+      pdfFileNameSpan.style.background = "#e0f0ff";
+      if(clearPdfBtn) clearPdfBtn.style.display = "block";
+      
+      // نمایش iframe پیش‌نمایش
+      const iframe = document.createElement("iframe");
+      iframe.src = blobUrl;
+      iframe.title = "پیش نمایش نشریه شماره دوم";
+      iframe.style.width = "100%";
+      iframe.style.height = "280px";
+      iframe.style.borderRadius = "16px";
+      iframe.style.border = "1px solid var(--yellow)";
+      pdfPreviewDiv.appendChild(iframe);
+      
+      // لینک دانلود
+      const downloadLink = document.createElement("a");
+      downloadLink.href = blobUrl;
+      downloadLink.download = file.name;
+      downloadLink.innerText = "⬇️ دانلود فایل PDF";
+      downloadLink.style.display = "inline-block";
+      downloadLink.style.marginTop = "12px";
+      downloadLink.style.padding = "5px 12px";
+      downloadLink.style.backgroundColor = "var(--blue)";
+      downloadLink.style.color = "white";
+      downloadLink.style.borderRadius = "40px";
+      downloadLink.style.textDecoration = "none";
+      downloadLink.style.fontSize = "12px";
+      pdfPreviewDiv.appendChild(downloadLink);
+    }
+    
+    pdfInput.addEventListener("change", function(e) {
+      const file = e.target.files[0];
+      if(file && file.type === "application/pdf") {
+        updatePdfPreview(file);
+      } else if(file) {
+        alert("لطفاً فایل PDF معتبر انتخاب کنید.");
+        pdfInput.value = "";
+        updatePdfPreview(null);
+      } else {
+        updatePdfPreview(null);
+      }
+    });
+    
+    if(clearPdfBtn) {
+      clearPdfBtn.addEventListener("click", function() {
+        pdfInput.value = "";
+        updatePdfPreview(null);
+      });
+    }
+    // مقدار اولیه
+    updatePdfPreview(null);
+  }
 </script>
 </body>
 </html>
