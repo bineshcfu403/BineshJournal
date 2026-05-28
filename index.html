@@ -249,7 +249,7 @@
           <div class="speakers-list">
            گویندگان: سارا اسدی کرم، سکینه ایزدی، فاطمه ایزدی، پرنیا بهرامی مقدم، سارینا ذاکری، مائده شیخیان، ریحانه علیزاده، ستاره غلام‌پور، ریحانه هاشم‌پور هامانه
           </div>
-          <div class="files">
+          <section class="files">
             <div class="file-card" id="podcast2-1"><div class="file-title">بیعت ملت، رمز اقتدار و آرامش ایران</div><audio controls src="mp3-issue2/1.mp3"></audio></div>
             <div class="file-card" id="podcast2-2"><div class="file-title">نبرد بی‌پایان</div><audio controls src="mp3-issue2/2.mp3"></audio></div>
             <div class="file-card" id="podcast2-3"><div class="file-title">معرفی</div><audio controls src="mp3-issue2/3.mp3"></audio></div>
@@ -260,8 +260,8 @@
             <div class="file-card" id="podcast2-8"><div class="file-title">قاتل خاموش دانشجویان و ریشه‌های پنهان آن!</div><audio controls src="mp3-issue2/8.mp3"></audio></div>
             <div class="file-card" id="podcast2-9"><div class="file-title">همسفر با تجربه</div><audio controls src="mp3-issue2/9.mp3"></audio></div>
            <div class="file-card" id="podcast2-10"><div class="file-title">از پنجره قلم تا پرده سینما</div><audio controls src="mp3-issue2/10.mp3"></audio></div>
-        </div>
-        </div>
+        </section>
+    
 
         <div class="column">
           <h3>📘 فایل نشریه</h3>
@@ -291,8 +291,8 @@
     </a>
   </div>
 </footer>
-
 <script>
+  // باز/بسته کردن آکاردئون‌ها
   document.querySelectorAll(".accordion-header").forEach(header=>{
     header.addEventListener("click", ()=>{
       const content = header.nextElementSibling;
@@ -300,6 +300,7 @@
     });
   });
 
+  // وقتی یک صدا پخش شد، بقیه متوقف شوند
   document.querySelectorAll("audio").forEach(audio => {
     audio.addEventListener("play", () => {
       document.querySelectorAll("audio").forEach(otherAudio => {
@@ -311,6 +312,7 @@
     });
   });
 
+  // باز کردن آکاردئون و رفتن به آیتم با #id یا ?id=
   (function(){
     function openAccordionFor(el){
       const accContent = el.closest('.accordion-content');
@@ -318,29 +320,35 @@
         accContent.classList.add('open');
       }
     }
+
     function playAudioInside(el){
       const audio = el.querySelector('audio');
       if(audio){ audio.play().catch(()=>{}); }
     }
-    function goToAndPlayById(      const target = document.getElementById(id);
+
+    function goToAndPlayById(id){
+      const target = document.getElementById(id);
       if(target){
         openAccordionFor(target);
         setTimeout(()=>{
           target.scrollIntoView({behavior:'smooth', block:'center'});
           playAudioInside(target);
-        }, 1000);
+        }, 300);
         return true;
       }
       return false;
     }
+
     window.addEventListener('load', ()=>{
       const hash = (location.hash || '').replace(/^#/, '');
       if(hash && goToAndPlayById(hash)) return;
+
       const params = new URLSearchParams(location.search);
       if(params.has('id') && goToAndPlayById(params.get('id'))) return;
     });
   })();
 </script>
+
 </body>
 </html>
 
