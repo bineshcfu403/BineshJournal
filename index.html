@@ -156,12 +156,16 @@
   max-height:10000px; /* عمداً بزرگ */
 }
   .two-columns{
-    display:flex;
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns: 2fr 1fr 1fr;
     gap:30px;
     margin-top:20px;
+    align-items:start;
   }
-  .two-columns .column{ flex:1; min-width:300px; }
+  .two-columns .column{ min-width:0; }
+  @media (max-width: 900px){
+    .two-columns{ grid-template-columns:1fr; }
+  }
   .speakers-list {
     margin-top: 30px;
     background: var(--blue-light);
@@ -193,10 +197,6 @@
 
         <div class="column">
           <h3>🎙️ پادکست‌ها</h3>
-          <div class="speakers-list">
-         گویندگان: سارا اسدی کرم، پرنیا بهرامی مقدم، مائده شیخیان، ریحانه علیزاده، ستاره غلام‌پور و ریحانه هاشم‌پور هامانه
-          </div>
-          
           <!-- اینجا را تغییر دهید: تگ section را باز کنید -->
           <section class="files">
               <div class="file-card" id="podcast-9"><div class="file-title">شنبه‌های سنگین یاد تو</div><audio controls src="mp3/9.mp3"></audio></div>
@@ -246,9 +246,6 @@
 
         <div class="column">
           <h3>🎙️ پادکست‌ها</h3>
-          <div class="speakers-list">
-           گویندگان: سارا اسدی کرم، سکینه ایزدی، فاطمه ایزدی، پرنیا بهرامی مقدم، مطهره دهقان بنادکوکی، سارینا ذاکری، مائده شیخیان، ریحانه علیزاده، ستاره غلام‌پور، ریحانه هاشم‌پور هامانه
-          </div>
           <section class="files">
             <div class="file-card" id="podcast2-1"><div class="file-title">بیعت ملت، رمز اقتدار و آرامش ایران</div><audio controls src="mp320/1.mp3"></audio></div>
             <div class="file-card" id="podcast2-2"><div class="file-title">نبرد بی‌پایان</div><audio controls src="mp320/2.mp3"></audio></div>
@@ -352,3 +349,4 @@
 </body>
 </html>
 
+لطفا در این کد، کد اکارئون شماره اول را جوری بنویس که نحوه چینش ان در حالت دسکتاپ سایت مثل اکارئون شماره دوم شود و پادکست ها و فایل نشریه و ترجمه را جدولی بیاورد
