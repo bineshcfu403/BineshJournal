@@ -155,13 +155,23 @@
   padding:18px;
   max-height:10000px; /* عمداً بزرگ */
 }
+.two-columns{
+  display:grid;
+  grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr) minmax(220px, 1fr);
+  gap:30px;
+  margin-top:20px;
+  align-items:start;
+}
+
+.two-columns .column{
+  min-width:0;
+}
+
+@media (max-width: 900px){
   .two-columns{
-    display:grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap:30px;
-    margin-top:20px;
-    align-items:start;
+    grid-template-columns:1fr;
   }
+}
   .two-columns .column{ min-width:0; }
   @media (max-width: 900px){
     .two-columns{ grid-template-columns:1fr; }
@@ -348,5 +358,3 @@
 
 </body>
 </html>
-
-لطفا در این کد، کد اکارئون شماره اول را جوری بنویس که نحوه چینش ان در حالت دسکتاپ سایت مثل اکارئون شماره دوم شود و پادکست ها و فایل نشریه و ترجمه را جدولی بیاورد
