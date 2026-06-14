@@ -185,7 +185,6 @@
     margin-bottom:30px;
   }
 }
-  }
   .speakers-list {
     margin-top: 30px;
     background: var(--blue-light);
@@ -196,6 +195,18 @@
     font-weight: 600;
     color: var(--blue-dark);
   }
+  /* فقط برای ستون ترجمه و نشریه */
+.issue-layout-1 .column:nth-child(2) .files,
+.issue-layout-1 .column:nth-child(3) .files,
+.issue-layout-2 .column:nth-child(2) .files{
+  display:block;
+}
+
+.issue-layout-1 .column:nth-child(2) .file-card,
+.issue-layout-1 .column:nth-child(3) .file-card,
+.issue-layout-2 .column:nth-child(2) .file-card{
+  width:100%;
+}
 </style>
 </head>
 <body>
