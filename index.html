@@ -157,10 +157,15 @@
 }
 .issue-layout-1{
   display:grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap:30px;
   margin-top:20px;
   align-items:start;
+}
+
+/* ستون سمت چپ (ترجمه + نشریه) */
+.issue-layout-1 .side-column .files{
+  display:block;
 }
 
 .issue-layout-2{
@@ -244,27 +249,25 @@
           <!-- تگ بستن section همان‌جاست و حالا درست کار می‌کند -->
         </div>
 
-        <div class="column">
-          <h3>📂 ترجمه‌</h3>
-          <section class="files">
-            <div class="file-card" id="translation-1">
-              <a href="pdf/1.pdf" target="_blank" style="text-decoration:none; color:inherit; display:block;">
-                <div class="file-title">در دام قضاوت دیگران: بررسی اضطراب اجتماعی</div>
-              </a>
-            </div>
-          </section>
-        </div>
+      <div class="column side-column">
+  <h3>📂 ترجمه‌</h3>
+  <section class="files">
+    <div class="file-card" id="translation-1">
+      <a href="pdf/1.pdf" target="_blank" style="text-decoration:none; color:inherit; display:block;">
+        <div class="file-title">در دام قضاوت دیگران: بررسی اضطراب اجتماعی</div>
+      </a>
+    </div>
+  </section>
 
-        <div class="column">
-          <h3>📘 فایل نشریه</h3>
-          <section class="files">
-            <div class="file-card" id="magazine-file-1">
-              <a href="pdf/magazine.pdf" target="_blank" style="text-decoration:none; color:inherit; display:block;">
-                <div class="file-title">شماره اول</div>
-              </a>
-            </div>
-          </section>
-        </div>
+  <h3 style="margin-top:30px;">📘 فایل نشریه</h3>
+  <section class="files">
+    <div class="file-card" id="magazine-file-1">
+      <a href="pdf/magazine.pdf" target="_blank" style="text-decoration:none; color:inherit; display:block;">
+        <div class="file-title">شماره اول</div>
+      </a>
+    </div>
+  </section>
+</div>
 
       </div>
     </div>
